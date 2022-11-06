@@ -1,0 +1,10 @@
+{
+"name": "{{ snmp_user }}",
+"description": "SNMP User",
+"securityLevel": "PRIV",
+"authenticationAlgorithm": "SHA",
+"authenticationPassword": "{{ auth_key }}",
+"encryptionAlgorithm": "AES128",
+"encryptionPassword": "{{ encr_key }}",
+"type": "snmpuser"
+}

@@ -1,0 +1,9 @@
+./app_snmp_ftd/.mypy_cache/*
+./app_snmp_ftd/.mypy_cache
+*.py[cod]
+./.DS_Store
+.DS_Store
+__pycache__/
+pycache/
+/pycache/
+api_fdm/tmp/*

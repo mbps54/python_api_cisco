@@ -1,0 +1,10 @@
+{
+"version": "null",
+"name": "{{ snmp_host_name }}",
+"description": "SNMP Server Host",
+"subType": "HOST",
+"value": "{{ snmp_server_ip }}",
+"isSystemDefined": "false",
+"dnsResolution": "IPV4_ONLY",
+"type": "networkobject"
+}

@@ -1,0 +1,7 @@
+./api_fdm/__pycache__
+./ai_fdm/.mypy_cache
+.DS_Store
+Dockerfile
+readme.md
+.gitignore
+.git

@@ -1,0 +1,27 @@
+{
+"name": "snmpv3-host",
+"managerAddress": {
+"version": "{{ object_networks_version }}",
+"name": "{{ object_networks_name }}",
+"id": "{{ object_networks_id }}",
+"type": "{{ object_networks_type }}"
+},
+"pollEnabled": "true",
+"trapEnabled": "true",
+"securityConfiguration": {
+"authentication": {
+"version": "{{ object_snmpusers_version }}",
+"name": "{{ object_snmpusers_name }}",
+"id": "{{ object_snmpusers_id }}",
+"type": "{{ object_snmpusers_type }}"
+},
+"type": "snmpv3securityconfiguration"
+},
+"interface": {
+"version": "{{ interface_version }}",
+"name": "{{ interface_name }}",
+"id": "{{ interface_id }}",
+"type": "{{ interface_type }}"
+},
+"type": "snmphost"
+}
