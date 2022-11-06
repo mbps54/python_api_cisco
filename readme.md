@@ -42,33 +42,37 @@ python snmp_config_fdm.py \
   --snmp_server_ip 10.2.2.2 \
   --snmp_user SNMP-USER \
   --snmp_host_name SNMP-HOST \
-  --auth_key XXX \
-  --encr_key XXX \
+  --auth_key XXXXXX \
+  --encr_key YYYYYY \
   --interface_name inside
 ```
 ### 2. Run Docker container
 Build container (optional)
 ```
-docker build . -t mbps54/python-api-cisco:1.1.1
+docker build . -t mbps54/python-api-cisco:1.1.2
 ```
 
-Run container
+Run container with parameters defined
 ```
 docker run -it \
-           -e FDM_IP='1.1.1.1' \
+           -e FDM_IP='10.1.1.1' \
            -e USERNAME='admin' \
            -e PASSWORD='passwword' \
-           -e SNMP_SERVER_IP='1.1.1.1' \
+           -e SNMP_SERVER_IP='10.2.2.2' \
            -e SNMP_USER='snmpUser' \
            -e SNMP_HOST_NAME='snmpHost' \
            -e AUTH_KEY='XXXXXX' \
            -e ENCR_KEY='YYYYYY' \
-           -e INTERFACE_NAME='LAN' \
+           -e INTERFACE_NAME='inside' \
            -e DEPLOY='False' \
            -e FDM_PORT='443' \
            -e API_VERSION='6' \
-           --name cont-python-api-cisco \
-           mbps54/python-api-cisco:1.1.1
+           mbps54/python-api-cisco:1.1.2
+```
+
+Run container and pass parameters in user promt
+```
+docker run -it mbps54/python-api-cisco:1.1.2
 ```
 
 ### 3a. Run Jenkins free style job (Python)
@@ -85,16 +89,18 @@ Not ready yet, in backlog for future
 ```
 tree
 
+├── Dockerfile
 ├── api_fdm
 │   ├── functions
 │   │   ├── basic_functions.py
 │   │   ├── fdm_get.py
 │   │   ├── fdm_login.py
 │   │   ├── fdm_post.py
+│   │   ├── fdm_post_np.py
 │   │   ├── initial_auth.py
 │   │   └── requests_functions.py
-│   ├── readme.md
 │   ├── snmp_config_fdm.py
+│   ├── start.sh
 │   ├── templates
 │   │   ├── object_networks.txt
 │   │   ├── object_snmphosts.txt
@@ -103,6 +109,9 @@ tree
 │       ├── debug.log
 │       └── token
 ├── diagram
+│   ├── SNMP.drawio
+│   ├── SNMP.jpg
 │   └── SNMP.pdf
+├── readme.md
 └── requirements.txt
 ```
