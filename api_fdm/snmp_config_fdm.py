@@ -25,11 +25,11 @@ from functions.basic_functions import jijna2_to_json
 @click.option('--encr_key', prompt=True, type=str, required=True, hide_input=True, help='SNMP AES 128 encryption key')
 @click.option('--interface_name', prompt=True, type=str, required=True, help='Cisco FDM interface for SNMP')
 @click.option('--deploy', prompt=True, type=bool, default=False, help='Deploy config now or not')
-@click.option('--fdm_port', type=str, default='443', help='Cisco FDM management port')
-@click.option('--api_version', type=str, default='6', help='Cisco FDM API version')
-@click.option('--tmp_dir', type=str, default='tmp', help='Temp directory for script')
-@click.option('--offset', type=str, default='0', help='Offset for JSON')
-@click.option('--limit', type=str, default=0, help='MAX object output')
+@click.option('--fdm_port', prompt=True, type=str, default='443', help='Cisco FDM management port')
+@click.option('--api_version', prompt=True, type=str, default='6', help='Cisco FDM API version')
+@click.option('--tmp_dir', prompt=True, type=str, default='tmp', help='Temp directory for script')
+@click.option('--offset', prompt=True, type=str, default='0', help='Offset for JSON')
+@click.option('--limit', prompt=True, type=str, default=1000, help='MAX object output')
 def play(
     fdm_ip: str,
     fdm_port: str,

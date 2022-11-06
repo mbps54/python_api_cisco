@@ -1,5 +1,7 @@
 #!/bin/bash
-
+if [ -z ${FDM_IP+foo} ]; then
+exec python3 /api_fdm/snmp_config_fdm.py
+else
 exec python3 /api_fdm/snmp_config_fdm.py \
 --fdm_ip $FDM_IP \
 --username $USERNAME \
@@ -13,3 +15,4 @@ exec python3 /api_fdm/snmp_config_fdm.py \
 --deploy $DEPLOY \
 --fdm_port $FDM_PORT \
 --api_version $API_VERSION
+fi
