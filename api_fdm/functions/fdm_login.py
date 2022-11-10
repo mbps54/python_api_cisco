@@ -29,6 +29,8 @@ def fdm_login(
     )
     if request.status_code == 400:
         raise Exception(f"Error logging in: {request.content}")
+    elif request.status_code == 401:
+        raise Exception(f"Error logging in: {request.content}")
     try:
         access_token = request.json()["access_token"]
         fa = open("{}/token".format(tmp_dir), "w")
