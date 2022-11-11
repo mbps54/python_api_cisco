@@ -50,7 +50,7 @@ python snmp_config_fdm.py \
 ### 2. Run Docker container
 Build container (optional)
 ```
-docker build . -t mbps54/python-api-cisco:1.1.2
+docker build . -t mbps54/python-api-cisco:1.1.3
 ```
 
 Run container with parameters defined
@@ -68,7 +68,7 @@ docker run -it \
            -e DEPLOY='False' \
            -e FDM_PORT='443' \
            -e API_VERSION='6' \
-           mbps54/python-api-cisco:1.1.2
+           mbps54/python-api-cisco:1.1.3
 ```
 
 Run container and pass parameters in user promt
