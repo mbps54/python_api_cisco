@@ -5,7 +5,8 @@ Python script allows users to fill in paramaters with ASA FDM creds, parameters 
 
 ### Release notes
 1.1.1 Script works with one IP only<br/>
-1.1.2 Docker container is added
+1.1.2 Docker container is added<br/>
+1.1.3 Timestamps added to debug.log file<br/>
 
 ### This git direcory contains:
 1. Python code
