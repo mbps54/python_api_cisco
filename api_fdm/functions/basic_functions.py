@@ -1,14 +1,17 @@
 import json
-from jinja2 import Environment, FileSystemLoader
+from datetime import datetime
 from typing import Union
+
+from jinja2 import Environment, FileSystemLoader
 
 
 def debugger(api_url: str, request_text: Union[dict, str], tmp_dir: str) -> None:
     if type(request_text) is dict:
         request_text = json.dumps(request_text, indent=2)
     debug_file = f"{tmp_dir}/debug.log"
+    timestamp = str(datetime.now()).split('.')[0]
     fh = open(debug_file, "a+")
-    fh.write("\n##################################################\n\n")
+    fh.write(f"\n#------------{  timestamp  }-----------#\n\n")
     fh.write(api_url)
     fh.write("\n")
     fh.write(request_text)
